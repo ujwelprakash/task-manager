@@ -14,7 +14,10 @@ const app = express();
 // Allow cross-origin requests (React frontend -> Node backend)
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://your-frontend.vercel.app"], // 👈 add frontend URLs
+    origin: [
+      "http://localhost:3000",
+      "https://task-manager-6e72s5q1k-ujwelprakashs-projects.vercel.app",
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
