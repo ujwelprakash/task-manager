@@ -1,10 +1,9 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://task-manager-backend.onrender.com/api",
-
+  baseURL: "https://task-manager-backend-e1dr.onrender.com/api", // 👈 deployed backend
   headers: {
-    "Content-Type": "application/json", // 👈 Force JSON
+    "Content-Type": "application/json",
   },
 });
 
