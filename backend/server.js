@@ -24,7 +24,6 @@ app.use(
   })
 );
 
-
 // Parse incoming JSON requests
 app.use(express.json());
 
@@ -35,7 +34,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 
-// ================== ERROR HANDLER (optional) ==================
+// ================== ROOT ROUTE ==================
+app.get("/", (req, res) => {
+  res.send("🚀 Task Manager API is running!");
+});
+
+// ================== HEALTH CHECK ROUTE ==================
+app.get("/health", (req, res) => {
+  res.json({ status: "ok", message: "Server is healthy 💚" });
+});
+
+// ================== ERROR HANDLER ==================
 app.use((req, res, next) => {
   res.status(404).json({ message: "Route not found" });
 });
