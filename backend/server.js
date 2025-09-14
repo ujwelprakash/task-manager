@@ -12,7 +12,13 @@ const app = express();
 
 // ================== MIDDLEWARE ==================
 // Allow cross-origin requests (React frontend -> Node backend)
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://your-frontend.vercel.app"], // 👈 add frontend URLs
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
 // Parse incoming JSON requests
 app.use(express.json());
