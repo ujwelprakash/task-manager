@@ -16,12 +16,14 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://task-manager-6e72s5q1k-ujwelprakashs-projects.vercel.app",
+      "https://task-manager-6e72s5q1k-ujwelprakashs-projects.vercel.app", // old frontend (optional)
+      "https://task-manager-rho-ecru.vercel.app", // ✅ new working frontend
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
 
 // Parse incoming JSON requests
 app.use(express.json());
